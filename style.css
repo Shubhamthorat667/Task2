@@ -1,0 +1,124 @@
+body {
+  background-image: url('./images/backimage.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+   background-position: center center;
+   opacity: 1;
+   z-index: 1;  
+   background-color: rgb(119, 201, 233);
+ 
+ }
+
+ .Container1 i {
+  margin-left: -22px;
+  cursor: pointer;
+}
+ 
+ .Container{
+   border: 2px solid black;
+   padding: 20px;
+   margin: 0 20px;
+   
+   
+ }
+ 
+ .Container1{
+   width: 90vw;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 10px;
+   /* border: 2px solid black; */
+ 
+ }
+ 
+ /* .child{
+   margin: 1%;
+   width: 100%;
+ 
+ } */
+ 
+ .input{
+   width: 100%;
+ }
+ 
+ input[type="email"], input[type="password"], input[type="text"],input[type="tel"],input[type="date"]
+ ,input[type="url"],input[type="number"],input[type="file"]{
+   padding: 10px;
+   width: 450px;
+   margin: 3px;
+   border: 1px solid #ccc;
+   background-color: aliceblue;
+   border-radius: 5px;
+   box-sizing: border-box;
+   height: 40px;
+ }
+ 
+ #View{
+   padding: 10px;
+   width: 100px;
+   margin: 3px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
+   background-color: rgb(139, 139, 225);
+ }
+ 
+ #countryCode, #currencySymbol{
+   padding: 10px;
+   width: 80px;
+   margin: 3px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
+   height: 40px;
+ 
+ }
+ 
+ /* #currencySymbol{
+   padding: 10px;
+   width: 80px;
+   margin: 3px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
+ } */
+ 
+ #textArea{
+   padding: 10px;
+   width: 450px;
+   margin: 3px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
+   height: 100px;
+ }
+ 
+ #Submit {
+   padding: 15px;
+   width: 150px;
+   margin-top: 20px;
+   margin-left: 600px;
+   border: 2px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
+   background-color: rgb(139, 139, 225);
+   font-size: 20px;
+ }
+ 
+ #Submit:hover {
+  background-color: yellow;
+}
+ 
+ 
+ label{
+   font-size: 25px;
+ }
+ 
+ .child_checkbox label{
+   font-size: 18px;
+ }
+ 
+
+ .pass child{
+  display: flex;
+ }

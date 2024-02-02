@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registation Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="Container" name="entry" style="background-image: url('./images/backimage.jpg');">
+      <div class="Container1">
+        <div class="email child">
+          <!-- email -->
+          <label for="exampleInputEmail" style="font-size: 25px"
+            >Enter your email:</label
+          ><br />
+          <input
+            type="email"
+            id="exampleInputEmail"
+            placeholder="Enter email address"
+            name="email"
+          />
+          <div id="emailValidText"></div>
+          <!-- <button onclick="validateEmail()">Submit</button> -->
+        </div>
+
+        <div class="pass child">
+          <!-- Password -->
+          <label for="pwd" style="font-size: 25px">Password:</label><br />
+          <div style="display: flex; width: 455px;">
+            <input
+              type="password"
+              id="pwd"
+              placeholder="Enter password"
+              name="pwd"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,16}$"
+              oninput="updatePasswordSuggestion(), validateForm()"
+            />
+            <button
+              style="
+                width: 60px;
+                background-color: rgb(142, 142, 243);
+                border-color: aqua;
+               border-radius: 10px;
+                margin-top: 1px;
+              "
+            >
+              <span
+                class="password-toggle"
+                onclick="togglePasswordVisibility()"
+                id="viewBtn"
+                >View</span
+              >
+            </button>
+          </div>
+          <!-- <i class="bi bi-eye-slash" id="togglePassword"></i> -->
+          <div id="password-suggestion"></div>
+        </div>
+      </div>
+
+      <div class="Container1">
+        <div class="alphatext child">
+          <!-- Alphatext -->
+          <label for="alphatext" style="font-size: 25px">Alphatext:</label
+          ><br />
+          <input
+            type="text"
+            id="alphatext"
+            name="user_input"
+            placeholder="Enter alpha"
+            onkeydown="return /[a-zA-Z]/i.test(event.key)"
+          />
+          <div id="alphatextValidatetext"></div>
+          <!-- <button onclick="validateAlphatext()">Submit</button> -->
+        </div>
+
+        <div class="phoneno child">
+          <!-- Phone Number -->
+          <label for="phoneNumber" style="font-size: 25px">Phone Number:</label>
+          <div>
+            <select id="countryCode" name="countryCode" required="">
+              <option value="+91">+91</option>
+              <option value="+1">+1</option>
+              <option value="+44">+44</option>
+              <!-- Add more options for other countries -->
+            </select>
+            <input
+              style="width: 360px"
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="Enter your phone number"
+              required=""
+              pattern="\d{10}"
+              oninput="validateNumericInput(this)"
+            />
+            <div id="phoneNumberValidatetext"></div>
+          </div>
+          <!-- <button onclick="validatePhoneNumber()">Submit</button> -->
+        </div>
+      </div>
+
+      <div class="Container1" name="radiocheck">
+        <div class="gender child">
+          <!-- Gender -->
+          <label for="gender">Gender: </label><br />
+          <div class="child_checkbox">
+            <input type="radio" id="male" name="gender" value="Male" />
+            <label for="male">Male</label><br />
+            <input type="radio" id="female" name="gender" value="Female" />
+            <label for="female">Female</label><br />
+          </div>
+          <div id="genderValidatetext"></div>
+          <!-- <button onclick="validateGender()">Submit</button> -->
+        </div>
+        <div class="datepicker child">
+          <!-- Date Picker -->
+          <label for="birthdate">Date Picker(Birth date)</label><br>
+                <input type="date" id="birthdate" onchange="validateBirthdate()"><br>
+                <div id="birthdateValidText"></div>
+        </div>
+      </div>
+
+      <div class="Container1">
+        <div class="URL child">
+          <!-- URL Field -->
+          <label for="url">URL Link:</label><br />
+          <input type="url" id="url" placeholder="Enter URL" name="url" />
+          <div id="urlValidatetext"></div>
+          <!-- <button onclick="validateURL()">Submit</button> -->
+        </div>
+
+        <div class="CurrencyField child">
+          <!-- Currency Field -->
+          <label for="currencyInput" style="font-size: 25px">Amount:</label
+          ><br />
+          <div>
+            <select id="currencySymbol" name="currencySymbol">
+              <option value="₹">₹</option>
+              <option value="$">$</option>
+              <option value="€">€</option>
+              <!-- Add more options for other currency symbols -->
+            </select>
+            <input
+              style="width: 360px"
+              type="number"
+              id="currencyInput"
+              name="currencyInput"
+              placeholder="Enter amount"
+              required=""
+              maxlength="12"
+            />
+            <div id="currencyValidatetext"></div>
+          </div>
+          <!-- <button onclick="validateCurrencyField()">Submit</button> -->
+        </div>
+      </div>
+
+      <div class="Container1">
+        <div class="Textarea child">
+          <!-- Textarea -->
+          <div>
+            <label for="textArea">Text Area:</label>
+          </div>
+          <textarea
+            id="textArea"
+            name="textArea"
+            placeholder="Text Area"
+          ></textarea>
+          <div id="textareaValidatetext"></div>
+          <!-- <button onclick="validateTextarea()">Submit</button> -->
+        </div>
+
+        <div class="Checkbox child" style="width: 450px">
+          <!-- Checkbox Group -->
+          <label for="">Checkbox</label>
+          <div class="child_checkbox">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+            <label for="vehicle1"> MEAN</label><br />
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+            <label for="vehicle2"> Blockchain </label><br />
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+            <label for="vehicle3"> React</label><br />
+            <input type="checkbox" id="vehicle4" name="vehicle4" value="BA" />
+            <label for="vehicle4"> BA</label><br />
+            <div id="checkboxValidatetext"></div>
+          </div>
+          <!-- <button onclick="validateCheckboxes()">Submit</button> -->
+        </div>
+      </div>
+
+      <div class="Container1">
+        <div class="Image child">
+          <!-- Image Upload -->
+          <label for="imageInput" style="font-size: 25px"
+            >Select an image:</label
+          ><br />
+          <input type="file" id="imageInput" name="imageInput" accept="image/*" onchange="uploadImage()" />
+
+          <div id="imagePreview"></div>
+        </div>
+
+        <div class="color child">
+          <!-- color field validation -->
+          <div class="Checkbox child" style="width: 450px">
+            <label for="colorInput" style="font-size: 25px">Enter a color:</label><br />
+            <input type="color" id="colorInput" name="colorInput" required style="width: 450px" />
+            <span id="colorError" class="error"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="Submit" onclick="submit()">submit</button>
+
+    <script src="script.js"></script>
+    <script>
+      togglePassword.addEventListener("click", function (e) {
+        // toggle the type attribute
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        // toggle the eye / eye slash icon
+        this.classList.toggle("bi-eye");
+      });
+    </script>
+  </body>
+</html>
